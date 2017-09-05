@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Dosis|Ubuntu" rel="stylesheet">
+	<title>The Mini-Blog</title>
+	<style type="text/css">
+		.container {
+			width: 50%;
+			margin: auto;
+			text-align: center;
+			color: #666666;
+			font-family: 'Ubuntu', sans-serif;
+		}
+		header {
+			font-size: 40px;
+			font-family: 'Dosis', sans-serif;
+		}
+		nav {
+			height: 50px;
+		}
+		form {
+			height: 150px;
+			width: 100%;
+		}
+		.Post {
+			margin-bottom: 15px;
+		}
+		.posting {
+			height: 200px;
+		}
+		.cot {
+			margin-top: 15px;
+			height: 105px;
+		}
+		h3 {
+			margin: 5px;
+		}
+		.currentTwit {
+			background-color: rgba(164, 165, 162, 0.6);
+			text-align: left;
+			color: #000;
+		}
+		.History {
+			background-color: rgba(164, 165, 162, 0.6);
+			text-align: left;
+			color: #000;
+		}
+		.but {
+			width: 20px;
+			height: 20px;
+			margin-right: 15px;
+			margin-left: 15px;
+		}
+		.twit_subject {
+			width: 55%;
+			display: inline;
+		}
+		.twit_like {
+			width: 30%;
+			display: inline;
+			float: right;
+		}
+		.error {
+			color: #ff0000;
+		}
+		.cm {
+			float: left;
+			display: inline;
+			width: 80%;
+			text-align: left;
+			color: #000;
+			background-color: #666666;
+			margin-right: 0;
+		}
+		.but_cm {
+			display: inline;
+			width: 20px;
+			margin: 0;
+		}
+	</style>
+</head>
+<body class="container" background="https://s-media-cache-ak0.pinimg.com/736x/dd/c0/77/ddc077c3c07f43cf3cfcaf5807fdd96f.jpg">
+	<header clsss="Header">Welcome to the Mini-Blog, {{name}}!</header>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>

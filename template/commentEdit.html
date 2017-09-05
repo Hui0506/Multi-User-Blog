@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br><br><hr>
+<div>
+	<form method="post">
+		<div>{{com.comment}}</div>
+		<div>Edit your commet</div>
+		<br>
+		<textarea rows="4" cols="50" name="comment"></textarea>
+		<br>
+		<input type="submit">
+		<input type="submit" name="cancel" value="Cancel">
+		<input type="hidden" name="id" value="{{com.key().id()}}">
+		</div>
+	</form>
+</div>
+{% endblock %}

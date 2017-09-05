@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+	<nav>
+		<form method="post">
+			<input type="submit" name="logout_old" value="Log out">
+			<input type="submit" name="back" value="back to homepage">
+		</form>
+	</nav>
+	<article class="Post">
+		<form method="post">
+			<section class="sub">
+				<h3>Subject</h3>
+				<input type="text" name="subject" value="{{subject}}">
+				<div class="error">{{error_sj}}</div>
+			</section>
+			<section class="cot">
+				<h3>Content</h3>
+				<textarea rows="4" cols="50" name="content" value="{{content}}"></textarea>
+				<div class="error">{{error_ct}}</div>
+			</section>
+			<input type="submit">
+		</form>
+		<br><br><hr>
+	</article>
+</div>
+
+{% endblock %}

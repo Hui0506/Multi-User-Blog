@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<h1>Log in</h1>
+		<nav>
+			<form method="post">
+				<input type="submit" name="register_new" value="Register">
+				<input type="submit" name="login_old" value="Log in">
+			</form>
+		</nav>	
+		<form method="post">
+			<table>
+				<tr>
+					<td>UserName</td>
+					<td><input type="text" name="username"></td>
+					<td class="error">{{error_lg}}</td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+			</table>
+			<input type="submit">
+		</form>
+	</div>
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<h3>Posting Twit</h3>
+		<nav>
+			<form method="post">
+				<input type="submit" name="backhome" value="Back to Homepage">
+			</form>
+		</nav>
+		<form method="post" class="posting">
+			<section class="sub">
+				<div>You can edit your current twit here!</div>
+				<h3>Subject</h3>
+				<input type="text" name="subject" value="{{subject}}">
+				<div class="error">{{error_sj}}</div>
+			</section>
+			<section class="cot">
+				<h3>Content</h3>
+				<textarea rows="4" cols="50" name="content" value="{{content}}"></textarea>
+				<div class="error">{{error_ct}}</div>
+			</section>
+			<input type="hidden" name="id" value="{{twit.key().id()}}">
+			<input type="submit">
+			<input type="submit" name="cancel" value="Cancel">
+		</form>	
+		<br>
+		<article class="currentTwit">
+			<h3>{{twit.subject}}</h3>
+			<content>{{twit.content}}</content>
+		</article>
+	</div>
+{% endblock %}
+
+

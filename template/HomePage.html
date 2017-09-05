@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">	
+		<h3>HomePage of the Blog</h3>
+		<nav>
+			<form method="post">
+				<input type="submit" name="logout_old" value="Log out">
+				<input type="submit" name="post" value="post">
+			</form>
+		</nav>
+		<form method="post">
+			{% for twit in twits %}
+				<div class="History">
+					<div class="twit_subject">{{twit.subject}}</div>
+					<div class="twit_like">{{twit.like}}</div>
+					<div class="twit_content">{{twit.content}}</div>
+					<input type="image" class="but" src = "http://pix.iemoji.com/images/emoji/apple/ios-9/256/smiling-face-with-smiling-eyes.png" alt="button" name="like" value="{{twit.key().id()}}">
+					<input type="image" class="but" src = "https://s-media-cache-ak0.pinimg.com/originals/ec/be/ea/ecbeead081c8d3da20a2a59824c9fe33.png" alt="button" name="unlike" value="{{twit.key().id()}}">
+					<input type="image" class="but" src = "https://qph.ec.quoracdn.net/main-qimg-83c6de25ed91d13a4f09fb5f11ca8853" alt="button" name="delete" value="{{twit.key().id()}}">
+					<input type="image" class="but" src = "http://megaicons.net/static/img/icons_sizes/8/178/512/editing-edit-icon.png" alt="button" name="edit" value="{{twit.key().id()}}">
+					<br>
+				</div>
+				<label class="cmtitle">coment area</label>
+				<input type="hidden" name="id" value="{{twit.key().id()}}">
+				<input class="comment" type="text" name="comment">
+				<input type="submit" value="comment">
+				{% for cm in cms %}
+					{% if cm.twit == twit.key().id() %}
+						<div class="cm">{{cm.comment}}</div>
+						<input type="image" class="but_cm" src = "https://qph.ec.quoracdn.net/main-qimg-83c6de25ed91d13a4f09fb5f11ca8853" alt="button" name="delete_cm" value="{{cm.key().id()}}">
+						<input type="image" class="but_cm" src = "http://megaicons.net/static/img/icons_sizes/8/178/512/editing-edit-icon.png" alt="button" name="edit_cm" value="{{cm.key().id()}}">
+					{% endif %}
+				{% endfor %}
+				<br><hr>
+			{% endfor %}
+		</form>	
+	</div>
+{% endblock %}
